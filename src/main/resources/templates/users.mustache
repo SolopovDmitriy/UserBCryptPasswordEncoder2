@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {{{bootstrapHead}}}
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="authorization">Authorize</a></li>
+        <li><a href="registration">Register</a></li>
+        <li><a href="main">Main</a></li>
+        <li class="list-group-item"><a href="logout">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="table">
+    {{#no-users}}
+        <div class="alert">No users</div>
+    {{/no-users}}
+    {{^no-users}}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>username</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Edit</th>
+            </tr>
+            {{#users}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{username}}</td>
+                    <td>{{email}}</td>
+                    <td>{{role}}</td>
+                    <td>
+                        <li>
+                            <a href="/edit_user?id={{id}}">
+                                Edit
+                            </a>
+                        </li>
+                    </td>
+                </tr>
+            {{/users}}
+        </table>
+    {{/no-users}}
+
+</div>
+
+
+
+</body>
+</html>

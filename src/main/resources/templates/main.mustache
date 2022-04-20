@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring project nobody cares about - Clients</title>
+    {{{bootstrapHead}}}
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/mustache.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--    <script type="text/javascript" src="/main.js"></script>-->
+    <script type="text/javascript" src="/clients_jquery.js"></script>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="authorization">Authorize</a></li>
+        <li><a href="registration">Register</a></li>
+        <li><a href="users">Users</a></li>
+    </ul>
+</nav>
+<div class="form">
+    <form method="post" id="clientForm">
+        <input type="text" placeholder="surname" name="surname" value="S">
+        <input type="text" placeholder="name" name="name" value="N">
+        <input type="text" placeholder="patronymic" name="patronymic" value="P">
+        <input type="text" placeholder="email" name="email" value="E">
+        <input type="text" placeholder="dd.mm.yyyy" name="birthDate" value="12.03.1999">
+        <select name="gender">
+            <option value="NONE">NONE</option>
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select>
+        <input type="submit" value="ADD" id="loadButton">
+    </form>
+</div>
+<div class="load">
+<!--    <form method="post" action="load_clients">-->
+<!--        <input type="submit" value="LOAD">-->
+<!--    </form>-->
+</div>
+    <div id="output"></div>
+<!--<div class="table">
+    {{#no-clients}}
+        <div class="alert">No clients</div>
+    {{/no-clients}}
+    {{^no-clients}}
+        <table>
+        <tr>
+            <th>Id</th>
+            <th>Surname</th>
+            <th>Name</th>
+            <th>Patronymic</th>
+            <th>Email</th>
+            <th>Birth date</th>
+            <th>Gender</th>
+        </tr>
+        {{#clients}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{surname}}</td>
+                <td>{{name}}</td>
+                <td>{{patronymic}}</td>
+                <td>{{email}}</td>
+                <td>{{birthDate}}</td>
+                <td>{{gender}}</td>
+            </tr>
+        {{/clients}}
+        </table>
+    {{/no-clients}}
+</div>-->
+<a href="/phones">Phones</a>
+<a href="/accounts">Accounts</a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring project nobody cares about - Phones</title>
+    {{{bootstrapHead}}}
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form">
+    <form method="post" action="add_phone">
+        <input type="text" placeholder="phone" name="phone" value="+380991234567">
+        <input type="submit" value="ADD">
+    </form>
+</div>
+<div class="table">
+    {{#no-phones}}
+        <div class="alert">No phones</div>
+    {{/no-phones}}
+{{^no-phones}}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Phone</th>
+        </tr>
+        {{#phones}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{phone}}</td>
+            </tr>
+        {{/phones}}
+    </table>
+{{/no-phones}}
+    <a href="/main">Clients</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring project nobody cares about - Accounts</title>
+    {{{bootstrapHead}}}
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form">
+    <form method="post" action="add_account">
+        <input type="text" placeholder="amount" name="amount" value="1000">
+        <input type="submit" value="ADD">
+    </form>
+
+</div>
+<div class="table">
+    {{#no-accounts}}
+        <div class="alert">No accounts</div>
+    {{/no-accounts}}
+    {{^no-accounts}}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Amount</th>
+            </tr>
+            {{#accounts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{amount}}</td>
+                </tr>
+            {{/accounts}}
+        </table>
+    {{/no-accounts}}
+    <a href="/main">Clients</a>
+</div>
+</body>
+</html>

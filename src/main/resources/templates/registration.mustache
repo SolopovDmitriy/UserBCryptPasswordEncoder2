@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="authorization">Authorize</a></li>
+    </ul>
+</nav>
+<div>
+    <form method="post" action="register">
+        <div><label><input type="text" name="login" placeholder="login" value="Solopov"></label></div>
+        <div><label><input type="password" name="password" placeholder="password" value="123"></label></div>
+        <div><label><input type="email" name="email" placeholder="email" value="qwerty@gmail.com"></label></div>
+<!--        <input type="hidden" nam="_crsf" value="{_crsf.token}}">-->
+<!--        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+
+        {{#_csrf}}
+            <input type="hidden" name="{{parameterName}}" value="{{token}}"/>
+        {{/_csrf}}
+
+        <input type="button" value="Cancel">
+        <input type="submit" value="Register">
+    </form>
+</div>
+</body>
+</html>
